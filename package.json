@@ -1,0 +1,27 @@
+{
+  "name": "qa_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessyParedes/QA_TEST.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessyParedes/QA_TEST/issues"
+  },
+  "homepage": "https://github.com/JessyParedes/QA_TEST#readme",
+  "devDependencies": {
+    "cypress": "^15.10.0",
+    "mochawesome": "^7.1.4"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.3.0"
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 3,
+    "pending": 0,
+    "failures": 3,
+    "start": "2026-02-19T19:45:38.645Z",
+    "end": "2026-02-19T19:46:07.047Z",
+    "duration": 28402,
+    "testsRegistered": 6,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "999a86bf-d512-4582-872f-2cd57ccd7c7e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\endereco_botao_salvar.cy.js",
+      "file": "cypress\\e2e\\cadastro\\endereco_botao_salvar.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d418609d-da43-486f-b651-b3321e2fc831",
+          "title": "Validação do Botão Salvar",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar se ao clicar em Salvar é feita a validação dos campos obrigatórios",
+              "fullTitle": "Validação do Botão Salvar Verificar se ao clicar em Salvar é feita a validação dos campos obrigatórios",
+              "timedOut": null,
+              "duration": 5712,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Limpa todos os campos obrigatórios\ncy.get('#logradouro').clear();\ncy.get('#numero').clear();\ncy.get('#bairro').clear();\ncy.get('#cidade').clear();\ncy.get('#estado').clear();\ncy.get('#cep').clear();\ncy.contains('Salvar').click();\n// Espera que apareça a primeira mensagem de erro\ncy.get('.modal').should('be.visible').and('contain.text', 'Preencher corretamente o campo Logradouro, dúvida entrar em requisitos!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153215:58)\n    at Object.isStrictlyVisible (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153229:10)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115518:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "d42f2ee4-2d2e-4749-8c97-a4c89798fd7f",
+              "parentUUID": "d418609d-da43-486f-b651-b3321e2fc831",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o botão Salvar exibe mensagem de sucesso quando todos os campos obrigatórios estão corretos",
+              "fullTitle": "Validação do Botão Salvar Verificar se o botão Salvar exibe mensagem de sucesso quando todos os campos obrigatórios estão corretos",
+              "timedOut": null,
+              "duration": 5087,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche todos os campos obrigatórios corretamente\ncy.get('#logradouro').clear().type('Rua das Flores');\ncy.get('#numero').clear().type('123');\ncy.get('#complemento').clear().type('Apartamento 101'); // opcional\ncy.get('#bairro').clear().type('Centro');\ncy.get('#cidade').clear().type('São Paulo');\ncy.get('#estado').clear().type('SP');\ncy.get('#cep').clear().type('01001-000');\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'Endereço cadastrado com sucesso!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {},
+              "uuid": "8a3e8380-5b7b-4b4b-80f2-d3a669f4e68e",
+              "parentUUID": "d418609d-da43-486f-b651-b3321e2fc831",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se não é possível salvar com campos obrigatórios vazios",
+              "fullTitle": "Validação do Botão Salvar Verificar se não é possível salvar com campos obrigatórios vazios",
+              "timedOut": null,
+              "duration": 8013,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#logradouro').clear();\ncy.get('#numero').clear();\ncy.get('#bairro').clear();\ncy.get('#cidade').clear();\ncy.get('#estado').clear();\ncy.get('#cep').clear();\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'Preencher corretamente o campo Logradouro, dúvida entrar em requisitos!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153215:58)\n    at Object.isStrictlyVisible (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153229:10)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115518:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "eca10680-c812-4087-a16c-171ca7c17dca",
+              "parentUUID": "d418609d-da43-486f-b651-b3321e2fc831",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se após salvar com sucesso os campos são limpos e desabilitados",
+              "fullTitle": "Validação do Botão Salvar Verificar se após salvar com sucesso os campos são limpos e desabilitados",
+              "timedOut": null,
+              "duration": 2358,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche e salva\ncy.get('#logradouro').clear().type('Rua das Flores');\ncy.get('#numero').clear().type('123');\ncy.get('#bairro').clear().type('Centro');\ncy.get('#cidade').clear().type('São Paulo');\ncy.get('#estado').clear().type('SP');\ncy.get('#cep').clear().type('01001-000');\ncy.contains('Salvar').click();\ncy.get('.modal button').contains('OK').click();\n// Campos devem estar limpos e desabilitados\ncy.get('#logradouro').should('have.value', '').and('be.disabled');\ncy.get('#numero').should('have.value', '').and('be.disabled');\ncy.get('#bairro').should('have.value', '').and('be.disabled');\ncy.get('#cidade').should('have.value', '').and('be.disabled');\ncy.get('#estado').should('have.value', '').and('be.disabled');\ncy.get('#cep').should('have.value', '').and('be.disabled');",
+              "err": {},
+              "uuid": "85f0fc28-8c72-40f7-9bbe-62fa053988d2",
+              "parentUUID": "d418609d-da43-486f-b651-b3321e2fc831",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o botão Salvar fica desativado até o usuário clicar em Limpar Endereço",
+              "fullTitle": "Validação do Botão Salvar Verificar se o botão Salvar fica desativado até o usuário clicar em Limpar Endereço",
+              "timedOut": null,
+              "duration": 4160,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Salvar').should('be.disabled');\ncy.contains('Limpar Endereço').click();\ncy.contains('Salvar').should('not.be.disabled');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<button#btnSalvar>' to be 'disabled'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<button#btnSalvar>' to be 'disabled'\n    at Context.eval (webpack://qa_test/./cypress/e2e/cadastro/endereco_botao_salvar.cy.js:82:26)",
+                "diff": null
+              },
+              "uuid": "dab3ae62-ce4d-460a-9022-673e2d5bac01",
+              "parentUUID": "d418609d-da43-486f-b651-b3321e2fc831",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o endereço cadastrado é armazenado no localStorage",
+              "fullTitle": "Validação do Botão Salvar Verificar se o endereço cadastrado é armazenado no localStorage",
+              "timedOut": null,
+              "duration": 2039,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche e salva\ncy.get('#logradouro').clear().type('Rua das Flores');\ncy.get('#numero').clear().type('123');\ncy.get('#bairro').clear().type('Centro');\ncy.get('#cidade').clear().type('São Paulo');\ncy.get('#estado').clear().type('SP');\ncy.get('#cep').clear().type('01001-000');\ncy.contains('Salvar').click();\ncy.get('.modal button').contains('OK').click();\n// Valida se o localStorage possui o cadastro\ncy.window().then(win => {\n  const endereco = JSON.parse(win.localStorage.getItem('endereco'));\n  expect(endereco).to.deep.equal({\n    logradouro: 'Rua das Flores',\n    numero: '123',\n    complemento: '',\n    bairro: 'Centro',\n    cidade: 'São Paulo',\n    estado: 'SP',\n    cep: '01001-000'\n  });\n});",
+              "err": {},
+              "uuid": "4321f058-b8ae-45bd-8924-d4d69c2c82bc",
+              "parentUUID": "d418609d-da43-486f-b651-b3321e2fc831",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8a3e8380-5b7b-4b4b-80f2-d3a669f4e68e",
+            "85f0fc28-8c72-40f7-9bbe-62fa053988d2",
+            "4321f058-b8ae-45bd-8924-d4d69c2c82bc"
+          ],
+          "failures": [
+            "d42f2ee4-2d2e-4749-8c97-a4c89798fd7f",
+            "eca10680-c812-4087-a16c-171ca7c17dca",
+            "dab3ae62-ce4d-460a-9022-673e2d5bac01"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27369,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 1,
+    "pending": 0,
+    "failures": 5,
+    "start": "2026-02-19T19:48:00.316Z",
+    "end": "2026-02-19T19:48:44.261Z",
+    "duration": 43945,
+    "testsRegistered": 6,
+    "passPercent": 16.666666666666664,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5d3156e4-3031-44f7-a1d1-ed3a875ace04",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\endereco_validacoes_estado.cy.js",
+      "file": "cypress\\e2e\\cadastro\\endereco_validacoes_estado.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dc1f3980-7760-42cc-ad39-a58ffe45f53f",
+          "title": "Validação do Campo Estado",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar se o campo Estado permite digitar apenas 2 letras",
+              "fullTitle": "Validação do Campo Estado Verificar se o campo Estado permite digitar apenas 2 letras",
+              "timedOut": null,
+              "duration": 2757,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#estado').clear().type('SP');\ncy.get('#estado').invoke('val').should('have.length', 2);",
+              "err": {},
+              "uuid": "b01560dd-0c71-40fe-8058-00af90ee6ce4",
+              "parentUUID": "dc1f3980-7760-42cc-ad39-a58ffe45f53f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o campo Estado não permite ficar vazio",
+              "fullTitle": "Validação do Campo Estado Verificar se o campo Estado não permite ficar vazio",
+              "timedOut": null,
+              "duration": 6312,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#estado').clear();\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'Preencher corretamente o campo Estado, dúvida entrar em requisitos!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153215:58)\n    at Object.isStrictlyVisible (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153229:10)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115518:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "1b8592ec-f19e-4e81-af34-abd67afdfaf2",
+              "parentUUID": "dc1f3980-7760-42cc-ad39-a58ffe45f53f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o campo Estado aceita letras minúsculas e converte automaticamente para maiúsculas",
+              "fullTitle": "Validação do Campo Estado Verificar se o campo Estado aceita letras minúsculas e converte automaticamente para maiúsculas",
+              "timedOut": null,
+              "duration": 6385,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#estado').clear().type('sp');\ncy.get('#estado').invoke('val').should('eq', 'SP'); // Verifica conversão automática",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'sp' to equal 'SP'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'sp' to equal 'SP'\n    at Context.eval (webpack://qa_test/./cypress/e2e/cadastro/endereco_validacoes_estado.cy.js:37:36)",
+                "diff": "- 'sp'\n+ 'SP'\n"
+              },
+              "uuid": "16bb245b-8c15-4f1b-83ec-9ece2ebcf59e",
+              "parentUUID": "dc1f3980-7760-42cc-ad39-a58ffe45f53f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o campo Estado valida se a sigla UF existe na lista oficial",
+              "fullTitle": "Validação do Campo Estado Verificar se o campo Estado valida se a sigla UF existe na lista oficial",
+              "timedOut": null,
+              "duration": 9134,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "estadosValidos.forEach(sigla => {\n  cy.get('#estado').clear().type(sigla);\n  cy.contains('Salvar').click();\n  cy.get('.modal').should('be.visible').and('contain.text', 'Endereço cadastrado com sucesso!');\n  cy.get('.modal button').contains('OK').click();\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4000ms: `cy.clear()` failed because this element is `disabled`:\n\n`<input type=\"text\" id=\"estado\" placeholder=\"UF\" maxlength=\"2\" required=\"\" disabled=\"\">`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4000ms: `cy.clear()` failed because this element is `disabled`:\n\n`<input type=\"text\" id=\"estado\" placeholder=\"UF\" maxlength=\"2\" required=\"\" disabled=\"\">`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153181:58)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115497:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "5c5e10f0-bf1c-40a4-a2ee-6c209fa6dfd8",
+              "parentUUID": "dc1f3980-7760-42cc-ad39-a58ffe45f53f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se ao preencher incorretamente o campo Estado é exibida a mensagem de erro em modal",
+              "fullTitle": "Validação do Campo Estado Verificar se ao preencher incorretamente o campo Estado é exibida a mensagem de erro em modal",
+              "timedOut": null,
+              "duration": 9101,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#estado').clear().type('S'); // Menos de 2 caracteres\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'Preencher corretamente o campo Estado, dúvida entrar em requisitos!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153215:58)\n    at Object.isStrictlyVisible (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153229:10)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115518:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "7eaf4545-356a-4c95-bb6e-b9b0b008ea38",
+              "parentUUID": "dc1f3980-7760-42cc-ad39-a58ffe45f53f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se ao preencher uma UF inválida é exibida a mensagem específica em modal",
+              "fullTitle": "Validação do Campo Estado Verificar se ao preencher uma UF inválida é exibida a mensagem específica em modal",
+              "timedOut": null,
+              "duration": 9109,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#estado').clear().type('XX'); // UF inexistente\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'UF inválida! Preencher corretamente o campo Estado, dúvida entrar em requisitos!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153215:58)\n    at Object.isStrictlyVisible (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153229:10)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115518:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "572b9700-f227-4b57-9fc1-7e0cf4af79bb",
+              "parentUUID": "dc1f3980-7760-42cc-ad39-a58ffe45f53f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b01560dd-0c71-40fe-8058-00af90ee6ce4"
+          ],
+          "failures": [
+            "1b8592ec-f19e-4e81-af34-abd67afdfaf2",
+            "16bb245b-8c15-4f1b-83ec-9ece2ebcf59e",
+            "5c5e10f0-bf1c-40a4-a2ee-6c209fa6dfd8",
+            "7eaf4545-356a-4c95-bb6e-b9b0b008ea38",
+            "572b9700-f227-4b57-9fc1-7e0cf4af79bb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 42798,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

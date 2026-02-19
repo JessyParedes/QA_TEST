@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-02-19T19:45:07.226Z",
+    "end": "2026-02-19T19:45:10.235Z",
+    "duration": 3009,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0b9ce25a-6d8c-43ad-811c-8ebb48cf5bc9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\cadastro_validacoes_nome.cy.js",
+      "file": "cypress\\e2e\\cadastro\\cadastro_validacoes_nome.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "64b73f80-ce46-446a-ab20-23ef26105dcf",
+          "title": "Validações de Nome",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar nome obrigatório",
+              "fullTitle": "Validações de Nome Deve validar nome obrigatório",
+              "timedOut": null,
+              "duration": 741,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const usuario = _objectSpread(_objectSpread({}, (0, _massaUsuario.gerarPayloadBase)()), {}, {\n  nome: '' // 🔥 campo testado\n});\ncy.visit('https://carlosfelixpenha-create.github.io/QAPlayground/frontend/pages/cadastro.html');\ncy.get('#nome').type(usuario.nome);\ncy.get('#email').type(usuario.email);\ncy.get('#senha').type(usuario.senha);\ncy.get('#confirmarSenha').type(usuario.confirmarSenha);\ncy.contains('Cadastrar').click();\ncy.contains('Nome é obrigatório').should('be.visible');",
+              "err": {
+                "message": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type",
+                "estack": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type\n    at Context.type (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:117543:68)\n    at wrapped (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:146327:19)\nFrom Your Spec Code:\n    at Context.eval (webpack://qa_test/./cypress/e2e/cadastro/cadastro_validacoes_nome.cy.js:14:20)",
+                "diff": null
+              },
+              "uuid": "2bd76348-aba1-473c-887d-9eab0544f0c3",
+              "parentUUID": "64b73f80-ce46-446a-ab20-23ef26105dcf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2bd76348-aba1-473c-887d-9eab0544f0c3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 741,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

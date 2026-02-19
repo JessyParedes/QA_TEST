@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-02-19T19:45:12.623Z",
+    "end": "2026-02-19T19:45:20.618Z",
+    "duration": 7995,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "762030f8-ed1c-4c79-a5d8-ca6d8ff4addd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\cadastro_validacoes_senha.cy.js",
+      "file": "cypress\\e2e\\cadastro\\cadastro_validacoes_senha.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "21a890ee-b4e3-4ce2-911b-282ff3a61935",
+          "title": "Validações de Senha",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar senhas diferentes",
+              "fullTitle": "Validações de Senha Deve validar senhas diferentes",
+              "timedOut": null,
+              "duration": 6102,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const usuario = _objectSpread(_objectSpread({}, (0, _massaUsuario.gerarPayloadBase)()), {}, {\n  confirmarSenha: 'SenhaDiferente123'\n});\ncy.visit('https://carlosfelixpenha-create.github.io/QAPlayground/frontend/pages/cadastro.html');\ncy.get('#nome').type(usuario.nome);\ncy.get('#email').type(usuario.email);\ncy.get('#senha').type(usuario.senha);\ncy.get('#confirmarSenha').type(usuario.confirmarSenha);\ncy.contains('Cadastrar').click();\ncy.contains('As senhas não coincidem').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'As senhas não coincidem' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'As senhas não coincidem' but never did.\n    at Context.eval (webpack://qa_test/./cypress/e2e/cadastro/cadastro_validacoes_senha.cy.js:22:43)",
+                "diff": null
+              },
+              "uuid": "c2378929-a5b7-4498-abc2-840d78e0655d",
+              "parentUUID": "21a890ee-b4e3-4ce2-911b-282ff3a61935",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c2378929-a5b7-4498-abc2-840d78e0655d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6102,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

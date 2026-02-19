@@ -1,0 +1,175 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 1,
+    "pending": 0,
+    "failures": 3,
+    "start": "2026-02-19T19:46:27.038Z",
+    "end": "2026-02-19T19:46:54.299Z",
+    "duration": 27261,
+    "testsRegistered": 4,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cb810101-dff9-4914-bb7e-a9655b01c292",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\endereco_validacoes_bairro.cy.js",
+      "file": "cypress\\e2e\\cadastro\\endereco_validacoes_bairro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a8c4480-081b-4242-a3a1-32d4636eabac",
+          "title": "Validação do Campo Bairro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar se o campo Bairro permite digitar texto com no mínimo 3 caracteres",
+              "fullTitle": "Validação do Campo Bairro Verificar se o campo Bairro permite digitar texto com no mínimo 3 caracteres",
+              "timedOut": null,
+              "duration": 2875,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#bairro').clear().type('Jardim'); // Texto válido\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'Endereço cadastrado com sucesso!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {},
+              "uuid": "2cb58cd7-c329-4428-935b-bf503f2a434f",
+              "parentUUID": "0a8c4480-081b-4242-a3a1-32d4636eabac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o campo Bairro não permite ficar vazio",
+              "fullTitle": "Validação do Campo Bairro Verificar se o campo Bairro não permite ficar vazio",
+              "timedOut": null,
+              "duration": 6246,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#bairro').clear(); // Campo vazio\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'Preencher corretamente o campo Bairro, dúvida entrar em requisitos!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153215:58)\n    at Object.isStrictlyVisible (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153229:10)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115518:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "7152e9b7-be1d-4a96-8846-70841ef5e88a",
+              "parentUUID": "0a8c4480-081b-4242-a3a1-32d4636eabac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o campo Bairro não aceita números isolados",
+              "fullTitle": "Validação do Campo Bairro Verificar se o campo Bairro não aceita números isolados",
+              "timedOut": null,
+              "duration": 6499,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#bairro').clear().type('12345'); // Apenas números\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'Preencher corretamente o campo Bairro, dúvida entrar em requisitos!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '[ <div#modalMensagem.modal>, 1 more... ]' to contain text 'Preencher corretamente o campo Bairro, dúvida entrar em requisitos!', but the text was '\\n      \\n        ×\\n        Endereço cadastrado com sucesso!\\n        \\n          OK\\n        \\n      \\n    \\n      \\n        ×\\n        Erro no Cadastro de Endereço\\n        \\n        \\n          OK\\n        \\n      \\n    '",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '[ <div#modalMensagem.modal>, 1 more... ]' to contain text 'Preencher corretamente o campo Bairro, dúvida entrar em requisitos!', but the text was '\\n      \\n        ×\\n        Endereço cadastrado com sucesso!\\n        \\n          OK\\n        \\n      \\n    \\n      \\n        ×\\n        Erro no Cadastro de Endereço\\n        \\n        \\n          OK\\n        \\n      \\n    '\n    at Context.eval (webpack://qa_test/./cypress/e2e/cadastro/endereco_validacoes_bairro.cy.js:39:7)",
+                "diff": "- '\\n      \\n        ×\\n        Endereço cadastrado com sucesso!\\n        \\n          OK\\n        \\n      \\n    \\n      \\n        ×\\n        Erro no Cadastro de Endereço\\n        \\n        \\n          OK\\n        \\n      \\n    '\n+ 'Preencher corretamente o campo Bairro, dúvida entrar em requisitos!'\n"
+              },
+              "uuid": "79563355-ea32-4f3c-a54c-a68062b892cd",
+              "parentUUID": "0a8c4480-081b-4242-a3a1-32d4636eabac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se ao preencher incorretamente o campo Bairro é exibida a mensagem de erro em modal",
+              "fullTitle": "Validação do Campo Bairro Verificar se ao preencher incorretamente o campo Bairro é exibida a mensagem de erro em modal",
+              "timedOut": null,
+              "duration": 10095,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#bairro').clear().type('12'); // Menos de 3 caracteres\ncy.contains('Salvar').click();\ncy.get('.modal').should('be.visible').and('contain.text', 'Preencher corretamente o campo Bairro, dúvida entrar em requisitos!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153215:58)\n    at Object.isStrictlyVisible (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153229:10)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115518:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "4720503f-4069-4ce3-a8a7-8757cfe09c75",
+              "parentUUID": "0a8c4480-081b-4242-a3a1-32d4636eabac",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2cb58cd7-c329-4428-935b-bf503f2a434f"
+          ],
+          "failures": [
+            "7152e9b7-be1d-4a96-8846-70841ef5e88a",
+            "79563355-ea32-4f3c-a54c-a68062b892cd",
+            "4720503f-4069-4ce3-a8a7-8757cfe09c75"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 25715,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-19T19:47:53.323Z",
+    "end": "2026-02-19T19:47:59.296Z",
+    "duration": 5973,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8d3e8f45-9783-4cbe-9112-293adb35139a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\endereco_validacoes_complemento.cy.js",
+      "file": "cypress\\e2e\\cadastro\\endereco_validacoes_complemento.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fb2c90a9-6664-4820-9500-aa0353a0e7e8",
+          "title": "Validação do Campo Complemento",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar se o campo Complemento aceita texto livre",
+              "fullTitle": "Validação do Campo Complemento Verificar se o campo Complemento aceita texto livre",
+              "timedOut": null,
+              "duration": 2834,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#complemento').clear().type('Apartamento 101, bloco B, fundos');\ncy.contains('Salvar').click();\n// Verifica que não aparece mensagem de erro, pois complemento é opcional e aceita texto\ncy.get('.modal').should('be.visible').and('contain.text', 'Endereço cadastrado com sucesso!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {},
+              "uuid": "4743bf92-947b-46f6-b1fd-59e76e310a48",
+              "parentUUID": "fb2c90a9-6664-4820-9500-aa0353a0e7e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar se o campo Complemento pode ficar vazio",
+              "fullTitle": "Validação do Campo Complemento Verificar se o campo Complemento pode ficar vazio",
+              "timedOut": null,
+              "duration": 2114,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#complemento').clear(); // Deixa vazio\ncy.contains('Salvar').click();\n// Verifica que não aparece mensagem de erro, pois o campo é opcional\ncy.get('.modal').should('be.visible').and('contain.text', 'Endereço cadastrado com sucesso!');\ncy.get('.modal button').contains('OK').click();",
+              "err": {},
+              "uuid": "7c9530c4-b85e-4f57-a33f-b832b18c96d8",
+              "parentUUID": "fb2c90a9-6664-4820-9500-aa0353a0e7e8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4743bf92-947b-46f6-b1fd-59e76e310a48",
+            "7c9530c4-b85e-4f57-a33f-b832b18c96d8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4948,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

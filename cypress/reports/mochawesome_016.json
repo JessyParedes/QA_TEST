@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-02-19T19:49:31.949Z",
+    "end": "2026-02-19T19:49:38.653Z",
+    "duration": 6704,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5d695e97-f1a5-4861-a3ac-03667adf2a72",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\login.cy.js",
+      "file": "cypress\\e2e\\cadastro\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "287f8540-bc16-46c8-87d9-2442793a5982",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve fazer login com sucesso",
+              "fullTitle": "Login Deve fazer login com sucesso",
+              "timedOut": null,
+              "duration": 5560,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://carlosfelixpenha-create.github.io/QAPlayground/frontend/pages/login.html');\ncy.get('#usuario').type('jessymuro.conecthus@gmail.com');\ncy.get('#senha').type('601062Jp!');\n// Tenta clicar na checkbox do captcha\ncy.get('iframe[src*=\"recaptcha\"]').then($iframe => {\n  const $body = $iframe.contents().find('body');\n  cy.wrap($body).find('.recaptcha-checkbox-border').click();\n});\ncy.contains('Entrar').click();\ncy.contains('Email inválido').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `iframe[src*=\"recaptcha\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `iframe[src*=\"recaptcha\"]`, but never found it.\n    at Context.eval (webpack://qa_test/./cypress/e2e/cadastro/login.cy.js:9:7)",
+                "diff": null
+              },
+              "uuid": "818712d9-c720-41bb-be20-beb624c3bfc6",
+              "parentUUID": "287f8540-bc16-46c8-87d9-2442793a5982",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "818712d9-c720-41bb-be20-beb624c3bfc6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5560,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

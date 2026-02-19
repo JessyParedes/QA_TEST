@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-02-19T19:48:45.280Z",
+    "end": "2026-02-19T19:48:52.443Z",
+    "duration": 7163,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f428fde8-1d55-4074-9182-f3bc18bf4587",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\endereco_validacoes_logradouro.cy.js",
+      "file": "cypress\\e2e\\cadastro\\endereco_validacoes_logradouro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "35d12637-38ab-49ff-bf16-e7448f6ef13e",
+          "title": "Validação do Campo Logradouro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar mensagem de erro ao preencher incorretamente o campo Logradouro",
+              "fullTitle": "Validação do Campo Logradouro Verificar mensagem de erro ao preencher incorretamente o campo Logradouro",
+              "timedOut": null,
+              "duration": 6193,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche Logradouro incorretamente (exemplo: apenas números)\ncy.get('#logradouro').clear().type('123456');\n// Preenche os outros campos obrigatórios com valores válidos para não gerar erro neles\ncy.get('#numero').clear().type('123'); // Campo Número correto\ncy.get('#bairro').clear().type('Centro'); // Campo Bairro correto\ncy.get('#cidade').clear().type('São Paulo'); // Campo Cidade correto\ncy.get('#estado').clear().type('SP'); // Campo Estado correto\ncy.get('#cep').clear().type('01001000'); // Campo CEP correto, formato numérico válido\n// Clica em salvar para disparar as validações\ncy.contains('Salvar').click();\n// Verifica se a modal com a mensagem do Logradouro é exibida\ncy.get('.modal').should('be.visible').and('contain.text', 'Preencher corretamente o campo Logradouro, dúvida entrar em requisitos!');\n// Fecha a modal (ajuste seletor se necessário)\ncy.get('.modal button').contains('OK').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:\n\n`<button id=\"modalOk\" type=\"button\" class=\"btn-ok\">OK</button>`\n\nThis element `<button#modalOk.btn-ok>` is not visible because its parent `<div#modalMensagem.modal>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153215:58)\n    at Object.isStrictlyVisible (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:153229:10)\n    at runAllChecks (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115518:26)\n    at retryActionability (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:151964:14)\n    at tryCatcher (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://carlosfelixpenha-create.github.io/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "235ed48f-eb0d-41d3-95e0-b91e58e50019",
+              "parentUUID": "35d12637-38ab-49ff-bf16-e7448f6ef13e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "235ed48f-eb0d-41d3-95e0-b91e58e50019"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6193,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

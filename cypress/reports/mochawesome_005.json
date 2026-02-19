@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-19T19:45:35.305Z",
+    "end": "2026-02-19T19:45:37.639Z",
+    "duration": 2334,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ac7ae34e-2f9d-4de3-8880-7cab64b07f3d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro\\endereco_botao_requisitos.cy.js",
+      "file": "cypress\\e2e\\cadastro\\endereco_botao_requisitos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4f724ed9-c6ab-440f-b277-c6ca20e1ebb0",
+          "title": "Validação do Botão Requisitos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar se ao clicar no botão Requisitos a página redireciona para formulario-1-requisitos.html",
+              "fullTitle": "Validação do Botão Requisitos Verificar se ao clicar no botão Requisitos a página redireciona para formulario-1-requisitos.html",
+              "timedOut": null,
+              "duration": 1035,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Clica no botão Requisitos\ncy.contains('Requisitos').click();\n// Verifica se a URL atual contém \"formulario-1-requisitos.html\"\ncy.url().should('include', 'formulario-1-requisitos.html');",
+              "err": {},
+              "uuid": "33bef798-ad0e-479f-8c71-2e44631bfb1e",
+              "parentUUID": "4f724ed9-c6ab-440f-b277-c6ca20e1ebb0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "33bef798-ad0e-479f-8c71-2e44631bfb1e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1035,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
