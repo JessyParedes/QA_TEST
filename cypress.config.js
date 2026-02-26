@@ -1,28 +1,27 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  allowCypressEnv: false,
-
   e2e: {
-    setupNodeEvents(on, config) {
-      // Aqui você adiciona o reporter
-      // Não altera os testes em si
-      on('after:run', (results) => {
-        console.log('Testes finalizados!');
-      });
+    baseUrl: 'https://carlosfelixpenha-create.github.io/QAPlayground',
 
-      return config;
-    },
     specPattern: 'cypress/e2e/**/*.cy.js',
+
+    setupNodeEvents(on, config) {
+      on('after:run', (results) => {
+        console.log('Testes finalizados!')
+      })
+
+      return config
+    },
   },
 
-  reporter: "mochawesome",
+  reporter: 'mochawesome',
   reporterOptions: {
-    reportDir: "cypress/reports",
+    reportDir: 'cypress/reports',
     overwrite: false,
     html: true,
-    json: true
-  }
-});
+    json: true,
+  },
+})
 
 
