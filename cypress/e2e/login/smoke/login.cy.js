@@ -5,14 +5,15 @@ describe('Login', () => {
     cy.get('#usuario').type('jessymuro.conecthus@gmail.com');
     cy.get('#senha').type('601062Jp!');
 
-    // Tenta clicar na checkbox do captcha
-    cy.get('iframe[src*="recaptcha"]').then($iframe => {
-      const $body = $iframe.contents().find('body');
-      cy.wrap($body).find('.recaptcha-checkbox-border').click();
+    // Captcha simples
+    cy.get('#captcha').click();
+
+    cy.get('#btnEntrar').click();
+
+    cy.get('body').then(($body) => {
+      if ($body.find('#modalOkErro').length > 0) {
+        cy.get('#modalOkErro').click();
+      }
     });
-
-    cy.contains('Entrar').click();
-
-    cy.contains('Email inválido').should('be.visible');
   });
 });

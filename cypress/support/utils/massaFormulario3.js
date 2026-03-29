@@ -6,8 +6,8 @@ export function gerarMassaFormulario3(overrides = {}) {
     xlsx: 'cypress/fixtures/arquivos/valido.xlsx',
     txt: 'cypress/fixtures/arquivos/valido.txt',
     pais: 'Brasil',
-    estado: 'Amazonas',
-    cidade: 'Manaus',
+    estado: 'Paraná',   // Ajustado para Paraná
+    cidade: 'Curitiba', // Ajustado para Curitiba
     ...overrides
   }
 }
@@ -35,6 +35,7 @@ export const massasFormulario3 = {
     txt: 'cypress/fixtures/arquivos/invalido.exe'
   }),
 
+  // Corrigido para campos realmente vazios (strings vazias)
   paisVazio: gerarMassaFormulario3({
     pais: ''
   }),
@@ -47,6 +48,7 @@ export const massasFormulario3 = {
     cidade: ''
   }),
 
+  // Caso para todos vazios
   localizacaoVazia: gerarMassaFormulario3({
     pais: '',
     estado: '',

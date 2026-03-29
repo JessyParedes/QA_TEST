@@ -12,7 +12,7 @@ class Formulario3Page {
 
     btnEnviar: () => cy.get('[type="submit"]'),
     btnAudio: () => cy.get('#btn-audio'),
-    avatarVlibras: () => cy.get('#\\#canvas')
+    avatarVlibras: () => cy.get('#canvas')  // corrigido aqui
   }
 
   visit() {
