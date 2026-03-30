@@ -1,7 +1,3 @@
-Aqui está uma versão mais profissional, clara e pronta para portfólio do seu README — sem emoticons, com melhor estrutura e mais atrativa para recrutadores:
-
----
-
 # QA Automation Project
 
 ## Descrição do Projeto
