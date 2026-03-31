@@ -10,7 +10,7 @@ jobs:
 cypress-run:
 runs-on: ubuntu-latest
 
-```
+
 steps:
   - name: Checkout
     uses: actions/checkout@v3
@@ -37,4 +37,4 @@ steps:
     with:
       name: cypress-screenshots
       path: cypress/screenshots
-```
+
