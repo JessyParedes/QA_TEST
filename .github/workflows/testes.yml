@@ -2,7 +2,8 @@ name: Cypress Tests
 
 on:
 push:
-branches: ["main"]
+branches:
+- main
 pull_request:
 workflow_dispatch:
 
@@ -37,6 +38,3 @@ steps:
     with:
       name: cypress-screenshots
       path: cypress/screenshots
-
-
-
