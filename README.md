@@ -1,40 +1,32 @@
-# QA Automation Project
+# QA Automation Project - E2E Testing with Cypress
 
-## Descrição do Projeto
+- Sobre o Projeto
 
-Este projeto tem como objetivo demonstrar a aplicação de boas práticas em automação de testes utilizando Cypress. A proposta é simular cenários reais de validação de aplicações web, com foco em testes end-to-end (E2E) e validações funcionais.
+Este projeto tem como objetivo demonstrar a implementação de testes automatizados end-to-end (E2E) utilizando **Cypress**, simulando fluxos reais de uma aplicação web.
 
-A estrutura foi planejada para garantir organização, legibilidade e escalabilidade, seguindo padrões utilizados em projetos profissionais de QA.
+O foco está na validação funcional de cenários críticos de usuário, aplicando boas práticas de automação, organização de código e estrutura escalável.
 
----
+-Objetivos
 
-## Objetivos
+- Implementar testes automatizados E2E com Cypress  
+- Validar fluxos reais de usuário (cadastro, login e formulários)  
+- Cobrir cenários positivos e negativos  
+- Aplicar boas práticas de QA e automação de testes  
+- Estruturar um projeto organizado e escalável  
+- Simular contexto de testes próximo ao ambiente profissional  
 
-* Desenvolver testes automatizados E2E
-* Validar fluxos funcionais de formulários
-* Cobrir cenários positivos e negativos
-* Melhorar a organização e manutenção dos testes
-* Aplicar boas práticas utilizadas em projetos reais de qualidade de software
+- Tecnologias Utilizadas
 
----
+- Cypress  
+- JavaScript (ES6+)  
+- Node.js  
+- Visual Studio Code  
+- Git / GitHub  
 
-## Tecnologias Utilizadas
+-Estrutura do Projeto
 
-* Cypress
-* JavaScript (ES6+)
-* Node.js
-* Visual Studio Code
+O projeto foi organizado para facilitar manutenção, escalabilidade e separação de responsabilidades:
 
----
-
-## Estrutura do Projeto
-
-O projeto está organizado para separar responsabilidades e facilitar a manutenção:
-
-* `cypress/e2e`: cenários de teste
-* `cypress/pages`: abstração das páginas (Page Objects)
-* `cypress/fixtures`: massa de dados para testes
-* `cypress/support`: configurações e comandos customizados
 
 ---
 
