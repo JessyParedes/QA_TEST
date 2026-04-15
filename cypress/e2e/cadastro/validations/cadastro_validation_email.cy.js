@@ -1,5 +1,5 @@
 import { gerarPayloadBase } from '../../../support/utils/massaUsuario'
-import CadastroPage from '../../../support/pages/CadastroPage'
+import CadastroPage from '../../../support/pages/npx '
 
 describe('Validações de Email', () => {
   const emailsInvalidos = [
